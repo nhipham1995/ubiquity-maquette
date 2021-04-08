@@ -130,7 +130,11 @@ body {
     text-transform: uppercase;
     font-weight: 600;
 }
-
+.logo img {
+    padding-top: 0.3rem;
+    width: 13rem;
+    height: 3rem;
+}
 li.menu-item {
     margin-left: 40px;
     padding: 10px;
@@ -459,11 +463,14 @@ p.comment-item-description{
     min-height: 50vh;
 }
 .contact .container {
-    max-width: 85rem;
+    max-width: 90rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 0.1rem;
 }
-
+.contact .container article{
+    margin-top: 10.5rem;
+}
 article .title {
     color: var(--orange);
     text-transform: uppercase;
@@ -486,6 +493,18 @@ article .title {
     justify-content: start;
     margin-bottom: 2.1rem;
 }
+button.button-tag{
+    background-color: var(--button-tags);
+    margin-right: 0.1rem;
+    padding: 0.3rem 1.13rem;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.13rem;
+    line-height: 1;
+    color: var(--medium-font-color)
+}
+
 img.map-marker, img.map-marker-2 {
     width: 1.3rem;
     height: 1.625rem;
@@ -498,11 +517,17 @@ img.map-marker, img.map-marker-2 {
 
 }
 
-
+hr{
+    width: 85rem;
+    border: 0.1px solid #777777;
+    margin:  7.8rem auto 0 auto;
+}
 .container-footer {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    max-width: 90rem;
+    max-width: 85rem;
+    margin: 2rem auto 0 auto;
 }
 .social-network{
     display: flex;
@@ -511,4 +536,9 @@ img.map-marker, img.map-marker-2 {
     width: 1.875rem;
     height: 1.875rem;
     margin-left: 1.625rem;
+}
+.right {
+    font-size: 1.5rem;
+    line-height: 1.33;
+
 }
