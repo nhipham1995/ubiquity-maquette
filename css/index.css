@@ -197,15 +197,13 @@ p.landing-descrition{
     left: 45%;
 }
 /* services section */
-.services .container{
-    
+.services .container{ 
     text-align: center;
-  
 }
 
 .container #services-content{
     max-width: 75rem;
-    margin: 220px auto 0 auto;
+    margin: 16rem auto 0 auto;
 }
 
 .services
@@ -213,7 +211,8 @@ ul.main-services {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     max-width: 85rem;
-    margin: auto;
+    margin: 6rem auto 0 auto;
+  
 }
 h2.services-title {
     font-family: "Raleway", sans-serif;
@@ -225,10 +224,25 @@ p.services-description {
     font-size: 2rem;
     font-weight: 200;
 }
-.services-item img{
-    margin: 50px auto 5px auto;
-
+.services-item-images {
+    background-color: var(--light-font-color);
+    width: 12.5rem;
+    height: 12.5rem;
+    border-radius: 50%;
+    margin: auto;
+    display: grid;
+    place-items: center;
+   
+   
 }
+.services-item-images img.services-img{
+    margin: 50px auto 5px auto;
+    width: 5rem;
+    height: 5rem;
+    justify-self: center;
+    
+}
+
 .services-item-title {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
@@ -238,7 +252,7 @@ p.services-description {
 .services-item-description{
     font-weight: 200;
     font-size: 1.6rem;
-    margin-bottom: 220px;
+    margin-bottom: 17rem;
 }
 
 /* sepate section */
@@ -522,12 +536,13 @@ hr{
     border: 0.1px solid #777777;
     margin:  7.8rem auto 0 auto;
 }
+
 .container-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 85rem;
-    margin: 2rem auto 0 auto;
+    margin: 1.5rem auto 0 auto;
 }
 .social-network{
     display: flex;
