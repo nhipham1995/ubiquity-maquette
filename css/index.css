@@ -107,6 +107,7 @@ body {
     
 }
 
+
 /* LAYOUT */
 
 .container{
@@ -145,7 +146,20 @@ li.menu-item-main {
     background-color: var(--orange);
     color: var(--white);
 }
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+.menu-item a{
+    padding: 10px;
+}
 
+.menu-item:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    transition: .2s;
+    border-radius: 0.4rem;
+}
 /* landing section */
 .landing {
     min-height: 80rem;
