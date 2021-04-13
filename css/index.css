@@ -100,6 +100,13 @@
       --line-hr: #707070;
   }
 
+
+button:focus, .menu-item a:focus  {
+    border: red;
+}
+
+
+
 body {
     font-family: "Montserrat", sans-serif;
     color: var(--font-color);
@@ -154,7 +161,10 @@ a{
 
 
 [hidden] {
-    display: none;
+    /* display: none; */
+    display: block;
+    visibility: hidden;
+
 }
 ul#list-menu{
     position: absolute;
@@ -163,6 +173,13 @@ ul#list-menu{
     right: 0;
     z-index: 10;
     text-align: center;
+    background-color: var(--primary);
+	transform: translateX(-100%);
+	transition: .5s;
+}
+ul#list-menu:not([hidden]) {
+	transform: translateX(0);
+	transition: visibility .001s, transform .5s .001s ease-in; 
 }
 .main-nav ul.menu {    
     text-transform: uppercase;
@@ -173,8 +190,16 @@ button#button-menu {
     font-weight: 500;
     text-transform: uppercase;
     border: none;
-    margin-right: 2rem;
     padding: 1rem;
+}
+button#button-menu:focus {
+    color: black;
+}
+.menu-item:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    transition: .1s;
+    border-radius: 0.4rem;
 }
 @media screen and (min-width: 36em) {
     button#button-menu{
@@ -183,9 +208,11 @@ button#button-menu {
     ul#list-menu{
         display: flex;
         position: static;
+        visibility: visible;
+        transform: translateX(0%);
+
     }
-    .main-nav ul.menu {
-        
+    .main-nav ul.menu {   
         text-transform: uppercase;
         font-weight: 600;
         margin-top: 0.5rem;
@@ -195,11 +222,13 @@ button#button-menu {
     }
     li.menu-item {
         padding: 1rem;
-        margin-left: 0.5rem;
-    
+        margin-left: 0.5rem;   
     }   
 }
-.menu-item:hover, button#button-menu:hover{
+.menu-item a:hover{
+    background-color: var(--orange);
+}
+.menu-item a:focus,  button:focus{
     background-color: var(--orange);
     color: var(--white);
     transition: .2s;
@@ -285,6 +314,11 @@ p.landing-descrition{
     height: 3rem;
     transform: rotate(180deg);
 
+}
+div#badge-landing {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 @media(max-width: 1200px){
     .left{
@@ -383,15 +417,58 @@ p.services-description {
     padding: 10px;
 }
 /* introduction section */
-.introduction{
+.introduction{  
+    background-image: url(../images/background/bokehback.png) ; 
+    padding-top: 10rem;
+    padding-bottom: 35rem;
+    position: relative;  
+}
+@media screen and (min-width: 48em) {
+    .introduction{
+        padding-top: 10rem;
+        padding-bottom: 43rem;
+    }
+}
+@media screen and (min-width: 62em) {
+    .introduction{
+        padding-top: 15rem;
+        padding-bottom: 55rem;
+    }
+}
+@media screen and (min-width: 75em) {
+    .introduction{
+        padding-top: 20rem;
+        padding-bottom: 60rem;
+    }
+    .introduction .container {
+        text-align: center;
+        max-width: 75rem;   
+    }
     
-    background-image: url(../images/background/ordi.png), url(../images/background/bokehback.png) ;
-    background-position: right 62% bottom ;
-    background-repeat: no-repeat, no-repeat;
-    padding-top: 18rem;
-    padding-bottom: 58.4rem;
-
-   
+    div#white-none-margin.white {
+        margin-left: 0;
+    }
+    h2.introduction-title {
+        font-family: "Raleway", sans-serif;
+        font-size: 4.8rem;
+        font-weight: 700;
+        color: var(--orange);
+        
+    }
+    .introduction-description {
+        font-size: 1.9rem;
+        font-weight: 200;
+        color: var(--white);
+    }
+    img.second-background {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate( -50%);
+    } 
+    
+    
+    
 }
 .introduction .container {
     text-align: center;
@@ -413,6 +490,15 @@ h2.introduction-title {
     font-weight: 200;
     color: var(--white);
 }
+img.second-background {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate( -50%);
+} 
+
+
+
 
 /* posts section */
 .posts{
@@ -536,7 +622,7 @@ article p.posts-description {
     grid-template-columns: repeat(2, 1fr);
     
 }
-@media screen and (min-width: 36em){
+@media screen and (min-width: 25em){
     .list-funfact{
         grid-template-columns: repeat(3, 1fr);
         
@@ -595,10 +681,11 @@ article p.posts-description {
     width: 0.625rem;
     height: 0.625rem;
 }
-#badge {
+div#badge {
     position: absolute;
+    left: 50%;
     bottom: 10%;
-    left: 45%;
+    transform: translate(-50%);
 }
 figure.user-image img {
     border-radius: 100%;
